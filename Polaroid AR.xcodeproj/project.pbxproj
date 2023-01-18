@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		04B814022977A6F600BCCFB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B814012977A6F600BCCFB5 /* AppDelegate.swift */; };
 		04B814042977A6F600BCCFB5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B814032977A6F600BCCFB5 /* ContentView.swift */; };
-		04B814062977A6F600BCCFB5 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 04B814052977A6F600BCCFB5 /* Experience.rcproject */; };
 		04B814082977A6F700BCCFB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B814072977A6F700BCCFB5 /* Assets.xcassets */; };
 		04B8140B2977A6F700BCCFB5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B8140A2977A6F700BCCFB5 /* Preview Assets.xcassets */; };
 		04B814152977A6F700BCCFB5 /* Polaroid_ARTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B814142977A6F700BCCFB5 /* Polaroid_ARTests.swift */; };
@@ -38,7 +37,6 @@
 		04B813FE2977A6F600BCCFB5 /* Polaroid AR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Polaroid AR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B814012977A6F600BCCFB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04B814032977A6F600BCCFB5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		04B814052977A6F600BCCFB5 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		04B814072977A6F700BCCFB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04B8140A2977A6F700BCCFB5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		04B814102977A6F700BCCFB5 /* Polaroid ARTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Polaroid ARTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,8 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				04B814012977A6F600BCCFB5 /* AppDelegate.swift */,
-				04B814032977A6F600BCCFB5 /* ContentView.swift */,
-				04B814052977A6F600BCCFB5 /* Experience.rcproject */,
+				04FBEC5D2978AD5F009CFA5E /* Views */,
 				04B814072977A6F700BCCFB5 /* Assets.xcassets */,
 				04B814092977A6F700BCCFB5 /* Preview Content */,
 			);
@@ -128,6 +125,14 @@
 				04B814202977A6F700BCCFB5 /* Polaroid_ARUITestsLaunchTests.swift */,
 			);
 			path = "Polaroid ARUITests";
+			sourceTree = "<group>";
+		};
+		04FBEC5D2978AD5F009CFA5E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				04B814032977A6F600BCCFB5 /* ContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,7 +267,6 @@
 			files = (
 				04B814042977A6F600BCCFB5 /* ContentView.swift in Sources */,
 				04B814022977A6F600BCCFB5 /* AppDelegate.swift in Sources */,
-				04B814062977A6F600BCCFB5 /* Experience.rcproject in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
