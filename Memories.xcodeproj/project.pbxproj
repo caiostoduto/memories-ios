@@ -11,9 +11,9 @@
 		04B814042977A6F600BCCFB5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B814032977A6F600BCCFB5 /* ContentView.swift */; };
 		04B814082977A6F700BCCFB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B814072977A6F700BCCFB5 /* Assets.xcassets */; };
 		04B8140B2977A6F700BCCFB5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B8140A2977A6F700BCCFB5 /* Preview Assets.xcassets */; };
-		04B814152977A6F700BCCFB5 /* Polaroid_ARTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B814142977A6F700BCCFB5 /* Polaroid_ARTests.swift */; };
-		04B8141F2977A6F700BCCFB5 /* Polaroid_ARUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8141E2977A6F700BCCFB5 /* Polaroid_ARUITests.swift */; };
-		04B814212977A6F700BCCFB5 /* Polaroid_ARUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B814202977A6F700BCCFB5 /* Polaroid_ARUITestsLaunchTests.swift */; };
+		04B814152977A6F700BCCFB5 /* MemoriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B814142977A6F700BCCFB5 /* MemoriesTests.swift */; };
+		04B8141F2977A6F700BCCFB5 /* MemoriesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8141E2977A6F700BCCFB5 /* MemoriesUITests.swift */; };
+		04B814212977A6F700BCCFB5 /* MemoriesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B814202977A6F700BCCFB5 /* MemoriesUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,16 +34,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		04B813FE2977A6F600BCCFB5 /* Polaroid AR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Polaroid AR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04B813FE2977A6F600BCCFB5 /* Memories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B814012977A6F600BCCFB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04B814032977A6F600BCCFB5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		04B814072977A6F700BCCFB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04B8140A2977A6F700BCCFB5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		04B814102977A6F700BCCFB5 /* Polaroid ARTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Polaroid ARTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		04B814142977A6F700BCCFB5 /* Polaroid_ARTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polaroid_ARTests.swift; sourceTree = "<group>"; };
-		04B8141A2977A6F700BCCFB5 /* Polaroid ARUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Polaroid ARUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		04B8141E2977A6F700BCCFB5 /* Polaroid_ARUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polaroid_ARUITests.swift; sourceTree = "<group>"; };
-		04B814202977A6F700BCCFB5 /* Polaroid_ARUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polaroid_ARUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		04B814102977A6F700BCCFB5 /* MemoriesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemoriesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04B814142977A6F700BCCFB5 /* MemoriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriesTests.swift; sourceTree = "<group>"; };
+		04B8141A2977A6F700BCCFB5 /* MemoriesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemoriesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04B8141E2977A6F700BCCFB5 /* MemoriesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriesUITests.swift; sourceTree = "<group>"; };
+		04B814202977A6F700BCCFB5 /* MemoriesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,9 +74,9 @@
 		04B813F52977A6F600BCCFB5 = {
 			isa = PBXGroup;
 			children = (
-				04B814002977A6F600BCCFB5 /* Polaroid AR */,
-				04B814132977A6F700BCCFB5 /* Polaroid ARTests */,
-				04B8141D2977A6F700BCCFB5 /* Polaroid ARUITests */,
+				04B814002977A6F600BCCFB5 /* Memories */,
+				04B814132977A6F700BCCFB5 /* MemoriesTests */,
+				04B8141D2977A6F700BCCFB5 /* MemoriesUITests */,
 				04B813FF2977A6F600BCCFB5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -84,14 +84,14 @@
 		04B813FF2977A6F600BCCFB5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				04B813FE2977A6F600BCCFB5 /* Polaroid AR.app */,
-				04B814102977A6F700BCCFB5 /* Polaroid ARTests.xctest */,
-				04B8141A2977A6F700BCCFB5 /* Polaroid ARUITests.xctest */,
+				04B813FE2977A6F600BCCFB5 /* Memories.app */,
+				04B814102977A6F700BCCFB5 /* MemoriesTests.xctest */,
+				04B8141A2977A6F700BCCFB5 /* MemoriesUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		04B814002977A6F600BCCFB5 /* Polaroid AR */ = {
+		04B814002977A6F600BCCFB5 /* Memories */ = {
 			isa = PBXGroup;
 			children = (
 				04B814012977A6F600BCCFB5 /* AppDelegate.swift */,
@@ -99,7 +99,7 @@
 				04B814072977A6F700BCCFB5 /* Assets.xcassets */,
 				04B814092977A6F700BCCFB5 /* Preview Content */,
 			);
-			path = "Polaroid AR";
+			path = Memories;
 			sourceTree = "<group>";
 		};
 		04B814092977A6F700BCCFB5 /* Preview Content */ = {
@@ -110,21 +110,21 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		04B814132977A6F700BCCFB5 /* Polaroid ARTests */ = {
+		04B814132977A6F700BCCFB5 /* MemoriesTests */ = {
 			isa = PBXGroup;
 			children = (
-				04B814142977A6F700BCCFB5 /* Polaroid_ARTests.swift */,
+				04B814142977A6F700BCCFB5 /* MemoriesTests.swift */,
 			);
-			path = "Polaroid ARTests";
+			path = MemoriesTests;
 			sourceTree = "<group>";
 		};
-		04B8141D2977A6F700BCCFB5 /* Polaroid ARUITests */ = {
+		04B8141D2977A6F700BCCFB5 /* MemoriesUITests */ = {
 			isa = PBXGroup;
 			children = (
-				04B8141E2977A6F700BCCFB5 /* Polaroid_ARUITests.swift */,
-				04B814202977A6F700BCCFB5 /* Polaroid_ARUITestsLaunchTests.swift */,
+				04B8141E2977A6F700BCCFB5 /* MemoriesUITests.swift */,
+				04B814202977A6F700BCCFB5 /* MemoriesUITestsLaunchTests.swift */,
 			);
-			path = "Polaroid ARUITests";
+			path = MemoriesUITests;
 			sourceTree = "<group>";
 		};
 		04FBEC5D2978AD5F009CFA5E /* Views */ = {
@@ -138,9 +138,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		04B813FD2977A6F600BCCFB5 /* Polaroid AR */ = {
+		04B813FD2977A6F600BCCFB5 /* Memories */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 04B814242977A6F700BCCFB5 /* Build configuration list for PBXNativeTarget "Polaroid AR" */;
+			buildConfigurationList = 04B814242977A6F700BCCFB5 /* Build configuration list for PBXNativeTarget "Memories" */;
 			buildPhases = (
 				04B813FA2977A6F600BCCFB5 /* Sources */,
 				04B813FB2977A6F600BCCFB5 /* Frameworks */,
@@ -150,14 +150,14 @@
 			);
 			dependencies = (
 			);
-			name = "Polaroid AR";
+			name = Memories;
 			productName = "Polaroid AR";
-			productReference = 04B813FE2977A6F600BCCFB5 /* Polaroid AR.app */;
+			productReference = 04B813FE2977A6F600BCCFB5 /* Memories.app */;
 			productType = "com.apple.product-type.application";
 		};
-		04B8140F2977A6F700BCCFB5 /* Polaroid ARTests */ = {
+		04B8140F2977A6F700BCCFB5 /* MemoriesTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 04B814272977A6F700BCCFB5 /* Build configuration list for PBXNativeTarget "Polaroid ARTests" */;
+			buildConfigurationList = 04B814272977A6F700BCCFB5 /* Build configuration list for PBXNativeTarget "MemoriesTests" */;
 			buildPhases = (
 				04B8140C2977A6F700BCCFB5 /* Sources */,
 				04B8140D2977A6F700BCCFB5 /* Frameworks */,
@@ -168,14 +168,14 @@
 			dependencies = (
 				04B814122977A6F700BCCFB5 /* PBXTargetDependency */,
 			);
-			name = "Polaroid ARTests";
+			name = MemoriesTests;
 			productName = "Polaroid ARTests";
-			productReference = 04B814102977A6F700BCCFB5 /* Polaroid ARTests.xctest */;
+			productReference = 04B814102977A6F700BCCFB5 /* MemoriesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		04B814192977A6F700BCCFB5 /* Polaroid ARUITests */ = {
+		04B814192977A6F700BCCFB5 /* MemoriesUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 04B8142A2977A6F700BCCFB5 /* Build configuration list for PBXNativeTarget "Polaroid ARUITests" */;
+			buildConfigurationList = 04B8142A2977A6F700BCCFB5 /* Build configuration list for PBXNativeTarget "MemoriesUITests" */;
 			buildPhases = (
 				04B814162977A6F700BCCFB5 /* Sources */,
 				04B814172977A6F700BCCFB5 /* Frameworks */,
@@ -186,9 +186,9 @@
 			dependencies = (
 				04B8141C2977A6F700BCCFB5 /* PBXTargetDependency */,
 			);
-			name = "Polaroid ARUITests";
+			name = MemoriesUITests;
 			productName = "Polaroid ARUITests";
-			productReference = 04B8141A2977A6F700BCCFB5 /* Polaroid ARUITests.xctest */;
+			productReference = 04B8141A2977A6F700BCCFB5 /* MemoriesUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -214,7 +214,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 04B813F92977A6F600BCCFB5 /* Build configuration list for PBXProject "Polaroid AR" */;
+			buildConfigurationList = 04B813F92977A6F600BCCFB5 /* Build configuration list for PBXProject "Memories" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -227,9 +227,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				04B813FD2977A6F600BCCFB5 /* Polaroid AR */,
-				04B8140F2977A6F700BCCFB5 /* Polaroid ARTests */,
-				04B814192977A6F700BCCFB5 /* Polaroid ARUITests */,
+				04B813FD2977A6F600BCCFB5 /* Memories */,
+				04B8140F2977A6F700BCCFB5 /* MemoriesTests */,
+				04B814192977A6F700BCCFB5 /* MemoriesUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -274,7 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04B814152977A6F700BCCFB5 /* Polaroid_ARTests.swift in Sources */,
+				04B814152977A6F700BCCFB5 /* MemoriesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,8 +282,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04B8141F2977A6F700BCCFB5 /* Polaroid_ARUITests.swift in Sources */,
-				04B814212977A6F700BCCFB5 /* Polaroid_ARUITestsLaunchTests.swift in Sources */,
+				04B8141F2977A6F700BCCFB5 /* MemoriesUITests.swift in Sources */,
+				04B814212977A6F700BCCFB5 /* MemoriesUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,12 +292,12 @@
 /* Begin PBXTargetDependency section */
 		04B814122977A6F700BCCFB5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 04B813FD2977A6F600BCCFB5 /* Polaroid AR */;
+			target = 04B813FD2977A6F600BCCFB5 /* Memories */;
 			targetProxy = 04B814112977A6F700BCCFB5 /* PBXContainerItemProxy */;
 		};
 		04B8141C2977A6F700BCCFB5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 04B813FD2977A6F600BCCFB5 /* Polaroid AR */;
+			target = 04B813FD2977A6F600BCCFB5 /* Memories */;
 			targetProxy = 04B8141B2977A6F700BCCFB5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -424,7 +424,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Polaroid AR/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Memories/Preview Content\"";
 				DEVELOPMENT_TEAM = U6FNDVRTVG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -440,7 +440,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.github.caiostoduto.Polaroid-AR";
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.caiostoduto.Memories;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -455,7 +455,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Polaroid AR/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Memories/Preview Content\"";
 				DEVELOPMENT_TEAM = U6FNDVRTVG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -471,7 +471,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.github.caiostoduto.Polaroid-AR";
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.caiostoduto.Memories;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -490,12 +490,12 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.github.caiostoduto.Polaroid-ARTests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.caiostoduto.MemoriesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Polaroid AR.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Polaroid AR";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Memories.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Memories";
 			};
 			name = Debug;
 		};
@@ -510,12 +510,12 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.github.caiostoduto.Polaroid-ARTests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.caiostoduto.MemoriesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Polaroid AR.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Polaroid AR";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Memories.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Memories";
 			};
 			name = Release;
 		};
@@ -528,7 +528,7 @@
 				DEVELOPMENT_TEAM = U6FNDVRTVG;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.github.caiostoduto.Polaroid-ARUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.caiostoduto.MemoriesUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -546,7 +546,7 @@
 				DEVELOPMENT_TEAM = U6FNDVRTVG;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.github.caiostoduto.Polaroid-ARUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.caiostoduto.MemoriesUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -558,7 +558,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		04B813F92977A6F600BCCFB5 /* Build configuration list for PBXProject "Polaroid AR" */ = {
+		04B813F92977A6F600BCCFB5 /* Build configuration list for PBXProject "Memories" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				04B814222977A6F700BCCFB5 /* Debug */,
@@ -567,7 +567,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		04B814242977A6F700BCCFB5 /* Build configuration list for PBXNativeTarget "Polaroid AR" */ = {
+		04B814242977A6F700BCCFB5 /* Build configuration list for PBXNativeTarget "Memories" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				04B814252977A6F700BCCFB5 /* Debug */,
@@ -576,7 +576,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		04B814272977A6F700BCCFB5 /* Build configuration list for PBXNativeTarget "Polaroid ARTests" */ = {
+		04B814272977A6F700BCCFB5 /* Build configuration list for PBXNativeTarget "MemoriesTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				04B814282977A6F700BCCFB5 /* Debug */,
@@ -585,7 +585,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		04B8142A2977A6F700BCCFB5 /* Build configuration list for PBXNativeTarget "Polaroid ARUITests" */ = {
+		04B8142A2977A6F700BCCFB5 /* Build configuration list for PBXNativeTarget "MemoriesUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				04B8142B2977A6F700BCCFB5 /* Debug */,
