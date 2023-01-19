@@ -11,6 +11,7 @@ import RealityKit
 struct ContentView : View {
     @Namespace var namespace
     @State var shutterScale = 1
+    @State var recording = false
     
     init() {
         UINavigationBar.setAnimationsEnabled(false)
@@ -35,25 +36,33 @@ struct ContentView : View {
                             // Record video
                             Button {
                                 // TODO: Record ARKit function
+                                withAnimation {
+                                    recording.toggle()
+                                }
                             } label: {
-                                Image(systemName: "circle.fill")
-                                    .font(.system(size: 65))
+                                Rectangle()
+                                    .matchedGeometryEffect(id: "shutter", in: namespace)
+                                    .frame(width: recording ? 30 : 65,
+                                           height: recording ? 30 : 65)
                                     .foregroundColor(.red)
+                                    .cornerRadius(recording ? 5 : 50)
                             }
                         }
                         
-                        HStack {
-                            Spacer()
-                            
-                            // Create new memory button
-                            NavigationLink(destination: TakePhoto(), label: {
+                        if (!recording) {
+                            HStack {
+                                Spacer()
                                 
-                                // Button to add a new memory
-                                Image(systemName: "plus")
-                                    .font(.system(size: 28))
-                            })
-                                .frame(width: 100, height: 100)
-                                .contentShape(Rectangle())
+                                // Create new memory button
+                                NavigationLink(destination: TakePhoto(), label: {
+                                    
+                                    // Button to add a new memory
+                                    Image(systemName: "plus")
+                                        .font(.system(size: 28))
+                                })
+                                    .frame(width: 75, height: 75)
+                                    .contentShape(Rectangle())
+                            }
                         }
                     }
                 }
