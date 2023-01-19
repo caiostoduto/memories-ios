@@ -75,7 +75,7 @@ struct ContentView : View {
             case 1:
                 TakePhoto(manager: self)
             default:
-                fatalError("Invalid showcase main content")
+                fatalError("Invalid state content")
             }
         }
     }

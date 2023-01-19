@@ -35,7 +35,8 @@ struct TakePhoto: View {
                             .frame(width: 65, height: 65)
                             .foregroundColor(.white)
                             .cornerRadius(50)
-                    }
+                    }.frame(width: 75, height: 75)
+                        .contentShape(Rectangle())
                 }
                 
                 HStack {
