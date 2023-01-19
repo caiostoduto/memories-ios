@@ -10,7 +10,6 @@ import RealityKit
 
 struct ContentView : View {
     @Namespace var namespace
-    @State var shutterScale = 1
     @State var recording = false
     
     init() {
@@ -36,12 +35,13 @@ struct ContentView : View {
                             // Record video
                             Button {
                                 // TODO: Record ARKit function
+                                
                                 withAnimation {
                                     recording.toggle()
                                 }
                             } label: {
+                                // circle or square w/ round corners
                                 Rectangle()
-                                    .matchedGeometryEffect(id: "shutter", in: namespace)
                                     .frame(width: recording ? 30 : 65,
                                            height: recording ? 30 : 65)
                                     .foregroundColor(.red)

@@ -10,6 +10,7 @@ import SwiftUI
 struct TakePhoto: View {
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     
+    
     var body: some View {
         VStack {
             Spacer()
@@ -26,9 +27,11 @@ struct TakePhoto: View {
                     Button {
                         // TODO: Snapshot ARKit function
                     } label: {
-                        Image(systemName: "circle.fill")
-                            .font(.system(size: 65))
+                        // its a circle
+                        Rectangle()
+                            .frame(width: 65, height: 65)
                             .foregroundColor(.white)
+                            .cornerRadius(50)
                     }
                 }
                 
@@ -39,7 +42,7 @@ struct TakePhoto: View {
                         Image(systemName: "chevron.backward")
                             .font(.system(size: 28))
                     })
-                        .frame(width: 100, height: 100)
+                        .frame(width: 75, height: 75)
                         .contentShape(Rectangle())
                     
                     Spacer()
