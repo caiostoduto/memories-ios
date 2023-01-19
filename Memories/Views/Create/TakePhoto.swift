@@ -14,18 +14,36 @@ struct TakePhoto: View {
         VStack {
             Spacer()
             
-            HStack {
+            ZStack {
+                // Shutter button
+                Group {
+                    Circle()
+                        .stroke(.white, lineWidth: 4)
+                        .frame(width: 75.0, height: 75)
+                        .foregroundColor(.clear)
+                    
+                    // Take a photo
+                    Button {
+                        // TODO: Snapshot ARKit function
+                    } label: {
+                        Image(systemName: "circle.fill")
+                            .font(.system(size: 65))
+                            .foregroundColor(.white)
+                    }
+                }
                 
-                Button(action: {
-                    self.mode.wrappedValue.dismiss()
-                }, label: {
-                    Image(systemName: "chevron.backward")
-                        .font(.system(size: 28))
-                })
-                    .frame(width: 100, height: 100)
-                    .contentShape(Rectangle())
-                
-                Spacer()
+                HStack {
+                    Button(action: {
+                        self.mode.wrappedValue.dismiss()
+                    }, label: {
+                        Image(systemName: "chevron.backward")
+                            .font(.system(size: 28))
+                    })
+                        .frame(width: 100, height: 100)
+                        .contentShape(Rectangle())
+                    
+                    Spacer()
+                }
             }
         }.navigationBarBackButtonHidden(true)
     }

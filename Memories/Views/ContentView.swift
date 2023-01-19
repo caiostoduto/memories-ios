@@ -9,6 +9,13 @@ import SwiftUI
 import RealityKit
 
 struct ContentView : View {
+    @Namespace var namespace
+    @State var shutterScale = 1
+    
+    init() {
+        UINavigationBar.setAnimationsEnabled(false)
+    }
+    
     var body: some View {
         ZStack {
             ARViewContainer().edgesIgnoringSafeArea(.all)
@@ -17,18 +24,37 @@ struct ContentView : View {
                 VStack {
                     Spacer()
                     
-                    HStack {
-                        Spacer()
-                        
-                        // Create new memory button
-                        NavigationLink(destination: TakePhoto(), label: {
+                    ZStack {
+                        // Shutter button
+                        Group {
+                            Circle()
+                                .stroke(.white, lineWidth: 4)
+                                .frame(width: 75.0, height: 75)
+                                .foregroundColor(.clear)
                             
-                            // Button to add a new memory
-                            Image(systemName: "plus")
-                                .font(.system(size: 28))
-                        })
-                            .frame(width: 100, height: 100)
-                            .contentShape(Rectangle())
+                            // Record video
+                            Button {
+                                // TODO: Record ARKit function
+                            } label: {
+                                Image(systemName: "circle.fill")
+                                    .font(.system(size: 65))
+                                    .foregroundColor(.red)
+                            }
+                        }
+                        
+                        HStack {
+                            Spacer()
+                            
+                            // Create new memory button
+                            NavigationLink(destination: TakePhoto(), label: {
+                                
+                                // Button to add a new memory
+                                Image(systemName: "plus")
+                                    .font(.system(size: 28))
+                            })
+                                .frame(width: 100, height: 100)
+                                .contentShape(Rectangle())
+                        }
                     }
                 }
             }
