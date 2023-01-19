@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct TakePhoto: View {
-    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
+    private var manager: ContentView
     
+    init(manager: ContentView) {
+        self.manager = manager
+    }
     
     var body: some View {
         VStack {
@@ -37,23 +40,25 @@ struct TakePhoto: View {
                 
                 HStack {
                     Button(action: {
-                        self.mode.wrappedValue.dismiss()
+                        self.manager.state = 0
                     }, label: {
                         Image(systemName: "chevron.backward")
                             .font(.system(size: 28))
-                    })
-                        .frame(width: 75, height: 75)
-                        .contentShape(Rectangle())
+                        
+                    }).frame(width: 75, height: 75)
+                    .contentShape(Rectangle())
                     
                     Spacer()
                 }
             }
-        }.navigationBarBackButtonHidden(true)
+        }
     }
 }
 
+#if DEBUG
 struct TakePhoto_Previews: PreviewProvider {
     static var previews: some View {
-        TakePhoto()
+        TakePhoto(manager: ContentView())
     }
 }
+#endif

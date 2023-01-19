@@ -10,7 +10,10 @@ import RealityKit
 
 struct ContentView : View {
     @Namespace var namespace
-    @State var recording = false
+    @State private var recording = false
+    @State public var state = 0
+    
+    public var AR = ArgumentedReality()
     
     init() {
         UINavigationBar.setAnimationsEnabled(false)
@@ -18,71 +21,64 @@ struct ContentView : View {
     
     var body: some View {
         ZStack {
-            ARViewContainer().edgesIgnoringSafeArea(.all)
-
-            NavigationView {
-                VStack {
-                    Spacer()
-                    
-                    ZStack {
-                        // Shutter button
-                        Group {
-                            Circle()
-                                .stroke(.white, lineWidth: 4)
-                                .frame(width: 75.0, height: 75)
-                                .foregroundColor(.clear)
-                            
-                            // Record video
-                            Button {
-                                // TODO: Record ARKit function
-                                
-                                withAnimation {
-                                    recording.toggle()
-                                }
-                            } label: {
-                                // circle or square w/ round corners
-                                Rectangle()
-                                    .frame(width: recording ? 30 : 65,
-                                           height: recording ? 30 : 65)
-                                    .foregroundColor(.red)
-                                    .cornerRadius(recording ? 5 : 50)
-                            }
-                        }
+            AR.container.edgesIgnoringSafeArea(.all)
+            
+            switch(state) {
+            case 0:
+            VStack {
+                Spacer()
+                
+                ZStack {
+                    // Shutter button
+                    Group {
+                        Circle()
+                            .stroke(.white, lineWidth: 4)
+                            .frame(width: 75.0, height: 75)
+                            .foregroundColor(.clear)
                         
-                        if (!recording) {
-                            HStack {
-                                Spacer()
-                                
-                                // Create new memory button
-                                NavigationLink(destination: TakePhoto(), label: {
-                                    
-                                    // Button to add a new memory
-                                    Image(systemName: "plus")
-                                        .font(.system(size: 28))
-                                })
-                                    .frame(width: 75, height: 75)
-                                    .contentShape(Rectangle())
+                        // Record video
+                        Button {
+                            // TODO: Record ARKit function
+                            
+                            withAnimation {
+                                recording.toggle()
                             }
+                        } label: {
+                            // circle or square w/ round corners
+                            Rectangle()
+                                .frame(width: recording ? 30 : 65,
+                                       height: recording ? 30 : 65)
+                                .foregroundColor(.red)
+                                .cornerRadius(recording ? 5 : 50)
+                            
+                        }.frame(width: 75, height: 75)
+                        .contentShape(Rectangle())
+                    }
+                    
+                    if (!recording) {
+                        HStack {
+                            Spacer()
+
+                            // Button to add a new memory
+                            Button(action: {
+                                state = 1
+                            }, label: {
+                                Image(systemName: "plus")
+                                    .font(.system(size: 28))
+                                
+                            }).frame(width: 75, height: 75)
+                              .contentShape(Rectangle())
                         }
                     }
                 }
             }
+            case 1:
+                TakePhoto(manager: self)
+            default:
+                fatalError("Invalid showcase main content")
+            }
         }
     }
-}
-
-struct ARViewContainer: UIViewRepresentable {
-    
-    func makeUIView(context: Context) -> ARView {
-        
-        let arView = ARView(frame: .zero)
-        
-        return arView
-        
-    }
-    
-    func updateUIView(_ uiView: ARView, context: Context) {}
-    
 }
 
 #if DEBUG
