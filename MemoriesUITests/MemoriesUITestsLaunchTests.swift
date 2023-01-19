@@ -1,13 +1,13 @@
 //
-//  Polaroid_ARUITestsLaunchTests.swift
-//  Polaroid ARUITests
+//  MemoriesUITestsLaunchTests.swift
+//  MemoriesUITests
 //
 //  Created by Caio Stoduto on 18/01/23.
 //
 
 import XCTest
 
-final class Polaroid_ARUITestsLaunchTests: XCTestCase {
+final class MemoriesUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

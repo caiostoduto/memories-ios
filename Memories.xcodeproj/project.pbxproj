@@ -14,6 +14,8 @@
 		04B814152977A6F700BCCFB5 /* MemoriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B814142977A6F700BCCFB5 /* MemoriesTests.swift */; };
 		04B8141F2977A6F700BCCFB5 /* MemoriesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8141E2977A6F700BCCFB5 /* MemoriesUITests.swift */; };
 		04B814212977A6F700BCCFB5 /* MemoriesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B814202977A6F700BCCFB5 /* MemoriesUITestsLaunchTests.swift */; };
+		04FBEC622978B7FC009CFA5E /* TakePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FBEC612978B7FC009CFA5E /* TakePhoto.swift */; };
+		04FBEC652978BF4E009CFA5E /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FBEC642978BF4E009CFA5E /* Navigation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		04B8141A2977A6F700BCCFB5 /* MemoriesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemoriesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B8141E2977A6F700BCCFB5 /* MemoriesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriesUITests.swift; sourceTree = "<group>"; };
 		04B814202977A6F700BCCFB5 /* MemoriesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		04FBEC612978B7FC009CFA5E /* TakePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePhoto.swift; sourceTree = "<group>"; };
+		04FBEC642978BF4E009CFA5E /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 			children = (
 				04B814012977A6F600BCCFB5 /* AppDelegate.swift */,
 				04FBEC5D2978AD5F009CFA5E /* Views */,
+				04FBEC632978BF2E009CFA5E /* Components */,
 				04B814072977A6F700BCCFB5 /* Assets.xcassets */,
 				04B814092977A6F700BCCFB5 /* Preview Content */,
 			);
@@ -131,8 +136,25 @@
 			isa = PBXGroup;
 			children = (
 				04B814032977A6F600BCCFB5 /* ContentView.swift */,
+				04FBEC5E2978B680009CFA5E /* Create */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		04FBEC5E2978B680009CFA5E /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				04FBEC612978B7FC009CFA5E /* TakePhoto.swift */,
+			);
+			path = Create;
+			sourceTree = "<group>";
+		};
+		04FBEC632978BF2E009CFA5E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				04FBEC642978BF4E009CFA5E /* Navigation.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,7 +288,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				04B814042977A6F600BCCFB5 /* ContentView.swift in Sources */,
+				04FBEC622978B7FC009CFA5E /* TakePhoto.swift in Sources */,
 				04B814022977A6F600BCCFB5 /* AppDelegate.swift in Sources */,
+				04FBEC652978BF4E009CFA5E /* Navigation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Polaroid AR
+//  Memories
 //
 //  Created by Caio Stoduto on 18/01/23.
 //

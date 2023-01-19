@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  Polaroid AR
+//  Memories
 //
 //  Created by Caio Stoduto on 18/01/23.
 //
@@ -10,7 +10,29 @@ import RealityKit
 
 struct ContentView : View {
     var body: some View {
-        ARViewContainer().edgesIgnoringSafeArea(.all)
+        ZStack {
+            ARViewContainer().edgesIgnoringSafeArea(.all)
+
+            NavigationView {
+                VStack {
+                    Spacer()
+                    
+                    HStack {
+                        Spacer()
+                        
+                        // Create new memory button
+                        NavigationLink(destination: TakePhoto(), label: {
+                            
+                            // Button to add a new memory
+                            Image(systemName: "plus")
+                                .font(.system(size: 28))
+                        })
+                            .frame(width: 100, height: 100)
+                            .contentShape(Rectangle())
+                    }
+                }
+            }
+        }
     }
 }
 

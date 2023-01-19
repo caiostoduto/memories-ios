@@ -1,12 +1,12 @@
 //
-//  Polaroid_ARTests.swift
-//  Polaroid ARTests
+//  MemoriesTests.swift
+//  MemoriesTests
 //
 //  Created by Caio Stoduto on 18/01/23.
 //
 
 import XCTest
-@testable import Polaroid_AR
+@testable import Memories
 
 final class Polaroid_ARTests: XCTestCase {
 
