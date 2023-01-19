@@ -9,9 +9,9 @@ import SwiftUI
 import RealityKit
 
 struct ContentView : View {
-    @Namespace var namespace
+    @Namespace private var namespace
     @State private var recording = false
-    @State public var state = 0
+    @State var state = 0
     
     public var AR = ArgumentedReality()
     
@@ -74,6 +74,8 @@ struct ContentView : View {
             }
             case 1:
                 TakePhoto(manager: self)
+            case 2:
+                Text("View 2")
             default:
                 fatalError("Invalid state content")
             }

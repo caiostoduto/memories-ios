@@ -26,9 +26,8 @@ struct TakePhoto: View {
                         .frame(width: 75.0, height: 75)
                         .foregroundColor(.clear)
                     
-                    // Take a photo
                     Button {
-                        // TODO: Snapshot ARKit function
+                        takePhoto()
                     } label: {
                         // its a circle
                         Rectangle()
@@ -39,6 +38,7 @@ struct TakePhoto: View {
                         .contentShape(Rectangle())
                 }
                 
+                // Navigation
                 HStack {
                     Button(action: {
                         self.manager.state = 0
@@ -52,6 +52,12 @@ struct TakePhoto: View {
                     Spacer()
                 }
             }
+        }
+    }
+    
+    func takePhoto() {
+        self.manager.AR.snapshot {
+            self.manager.state += 1
         }
     }
 }

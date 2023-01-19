@@ -7,25 +7,37 @@
 
 import SwiftUI
 import RealityKit
+import ARKit
 
 class ArgumentedReality {
-    var container: ARViewContainer
+    private let arView = ARView(frame: .zero)
+    private var config = ARImageTrackingConfiguration()
+    let container: ARViewContainer
+    var lastSnapshot: ARView.Image?
     
     init() {
-        container = ARViewContainer()
+        arView.session.run(config)
+        container = ARViewContainer(arView: arView)
     }
     
-    
+    func snapshot(completion: @escaping ()->()) {
+        arView.snapshot(saveToHDR: false) { image in
+            self.lastSnapshot = image
+            
+            completion()
+        }
+    }
 }
 
 struct ARViewContainer: UIViewRepresentable {
+    private let arView: ARView!
+    
+    init(arView: ARView!) {
+        self.arView = arView
+    }
     
     func makeUIView(context: Context) -> ARView {
-        
-        let arView = ARView(frame: .zero)
-        
-        return arView
-        
+        return self.arView
     }
     
     func updateUIView(_ uiView: ARView, context: Context) {}
