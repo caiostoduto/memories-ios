@@ -10,6 +10,7 @@ import SwiftUI
 struct CropPhotoView: View {
     let manager: ContentView!
     
+    @State private var selectedCircle: Int! = nil
     @State private var circlesPresets = [
         CirclePreset(origin: CGPoint(x: 57, y: 146)),
         CirclePreset(origin: CGPoint(x: 354, y: 172)),
@@ -23,10 +24,12 @@ struct CropPhotoView: View {
     
     var body: some View {
         ZStack {
-            Image(uiImage: self.manager.AR.lastSnapshot!)
+            Group {
+                Image(uiImage: self.manager.AR.lastSnapshot!)
                     .scaledToFit()
-            //Image(uiImage: self.manager.AR.lastSnapshot!)
-            //   .edgesIgnoringSafeArea(.all)Image(/*@START_MENU_TOKEN@*/"Image Name"/*@END_MENU_TOKEN@*/)
+                
+            }.edgesIgnoringSafeArea(.all)
+            
             
             Group {
                 // Circles
@@ -44,11 +47,83 @@ struct CropPhotoView: View {
                     path.closeSubpath()
                 }.stroke(.white, lineWidth: 1)
             }
-        }.edgesIgnoringSafeArea(.all)
+
+            // Navigation
+            VStack {
+                Spacer()
+                
+                HStack {
+                    Button(action: {
+                        self.manager.state -= 1
+                    }, label: {
+                        Image(systemName: "chevron.backward")
+                            .font(.system(size: 28))
+                        
+                    }).frame(width: 75, height: 75)
+                        .contentShape(Rectangle())
+                    
+                    Spacer()
+                    
+                    Button(action: {
+                        self.manager.state += 1
+                    }, label: {
+                        Image(systemName: "checkmark")
+                            .font(.system(size: 28))
+                        
+                    }).frame(width: 75, height: 75)
+                        .contentShape(Rectangle())
+                }
+            }
+        }.gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local).onChanged({ val in
+            if (selectedCircle == nil) {
+                selectedCircle = closestCircle(point: val.startLocation)
+                print("Selected Circle: "+String(selectedCircle))
+            } else {
+                var x = circlesPresets[selectedCircle!].origin.x + val.translation.width
+                
+                var y = circlesPresets[selectedCircle!].origin.y + val.translation.height
+                
+                if (x<0) { x = 0 }
+                if (x>UIScreen.main.bounds.width) { x = UIScreen.main.bounds.width }
+                if (y<0) { y = 0 }
+                if (y>UIScreen.main.bounds.height) { y = UIScreen.main.bounds.height }
+                
+                circlesPresets[selectedCircle!].center.x = x
+                circlesPresets[selectedCircle!].center.y = y
+            }
+        }).onEnded({ _ in
+            if (selectedCircle != nil) {
+                print("Circle " + String(selectedCircle) + " new center", circlesPresets[selectedCircle!].center)
+                
+                circlesPresets[selectedCircle!].origin = circlesPresets[selectedCircle!].center
+                selectedCircle = nil
+            }
+        }))
     }
+    
+    
+    private func closestCircle(point: CGPoint) -> Int {
+            var closest: Int?
+            var closestDistance: CGFloat = .infinity
+            
+            for (index, circlePreset) in circlesPresets.enumerated() {
+                let distance = CGPointDistance(from: circlePreset.center, to: point)
+                if (distance < closestDistance) {
+                    closest = index
+                    closestDistance = distance
+                }
+            }
+            
+            return closest!
+        }
 }
 
-struct CirclePreset {
+private func CGPointDistance(from: CGPoint, to: CGPoint) -> CGFloat {
+    // Pythagoras ∆x & ∆y
+    return sqrt(pow(from.x-to.x, 2) + pow(from.y-to.y, 2))
+}
+
+private struct CirclePreset {
     var origin: CGPoint
     var center: CGPoint
     
