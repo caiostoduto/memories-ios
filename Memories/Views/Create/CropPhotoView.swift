@@ -24,13 +24,35 @@ struct CropPhotoView: View {
     
     var body: some View {
         ZStack {
-            Group {
-                Image(uiImage: self.manager.AR.lastSnapshot!)
-                    .scaledToFit()
+            Image(uiImage: self.manager.AR.lastSnapshot!)
+                .scaledToFit()
+                .edgesIgnoringSafeArea(.all)
+            
+            ZStack {
+                Rectangle() // destination
+                    .fill(.black.opacity(0.6))
+                    .edgesIgnoringSafeArea(.all)
                 
-            }.edgesIgnoringSafeArea(.all)
-            
-            
+                Group {
+                    // Circles
+                    ForEach(0..<4) { i in // 0...3
+                        Circle()
+                            .fill()
+                            .frame(width: 20, height: 20)
+                            .position(circlesPresets[i].center)
+                    }
+                    
+                    
+                    Path { path in
+                        path.move(to: circlesPresets[0].center)
+                        path.addLines([circlesPresets[1].center, circlesPresets[2].center, circlesPresets[3].center, circlesPresets[0].center])
+                        path.closeSubpath()
+                    }.fill()
+                    
+                }.blendMode(.destinationOut)
+                
+            }.compositingGroup()
+
             Group {
                 // Circles
                 ForEach(0..<4) { i in // 0...3
@@ -47,7 +69,7 @@ struct CropPhotoView: View {
                     path.closeSubpath()
                 }.stroke(.white, lineWidth: 1)
             }
-
+            
             // Navigation
             VStack {
                 Spacer()
