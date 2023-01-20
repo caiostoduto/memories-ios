@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04266F612979BBA1004292A7 /* CropPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04266F602979BBA1004292A7 /* CropPhotoView.swift */; };
 		04B814022977A6F600BCCFB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B814012977A6F600BCCFB5 /* AppDelegate.swift */; };
 		04B814042977A6F600BCCFB5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B814032977A6F600BCCFB5 /* ContentView.swift */; };
 		04B814082977A6F700BCCFB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B814072977A6F700BCCFB5 /* Assets.xcassets */; };
@@ -14,7 +15,7 @@
 		04B814152977A6F700BCCFB5 /* MemoriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B814142977A6F700BCCFB5 /* MemoriesTests.swift */; };
 		04B8141F2977A6F700BCCFB5 /* MemoriesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8141E2977A6F700BCCFB5 /* MemoriesUITests.swift */; };
 		04B814212977A6F700BCCFB5 /* MemoriesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B814202977A6F700BCCFB5 /* MemoriesUITestsLaunchTests.swift */; };
-		04FBEC622978B7FC009CFA5E /* TakePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FBEC612978B7FC009CFA5E /* TakePhoto.swift */; };
+		04FBEC622978B7FC009CFA5E /* TakePhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FBEC612978B7FC009CFA5E /* TakePhotoView.swift */; };
 		04FBEC652978BF4E009CFA5E /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FBEC642978BF4E009CFA5E /* Navigation.swift */; };
 		04FBEC672978FA9E009CFA5E /* ArgumentedReality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FBEC662978FA9E009CFA5E /* ArgumentedReality.swift */; };
 /* End PBXBuildFile section */
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04266F602979BBA1004292A7 /* CropPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropPhotoView.swift; sourceTree = "<group>"; };
 		04B813FE2977A6F600BCCFB5 /* Memories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B814012977A6F600BCCFB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04B814032977A6F600BCCFB5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,7 +49,7 @@
 		04B8141A2977A6F700BCCFB5 /* MemoriesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemoriesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B8141E2977A6F700BCCFB5 /* MemoriesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriesUITests.swift; sourceTree = "<group>"; };
 		04B814202977A6F700BCCFB5 /* MemoriesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriesUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		04FBEC612978B7FC009CFA5E /* TakePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePhoto.swift; sourceTree = "<group>"; };
+		04FBEC612978B7FC009CFA5E /* TakePhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePhotoView.swift; sourceTree = "<group>"; };
 		04FBEC642978BF4E009CFA5E /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		04FBEC662978FA9E009CFA5E /* ArgumentedReality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArgumentedReality.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -147,7 +149,8 @@
 		04FBEC5E2978B680009CFA5E /* Create */ = {
 			isa = PBXGroup;
 			children = (
-				04FBEC612978B7FC009CFA5E /* TakePhoto.swift */,
+				04FBEC612978B7FC009CFA5E /* TakePhotoView.swift */,
+				04266F602979BBA1004292A7 /* CropPhotoView.swift */,
 			);
 			path = Create;
 			sourceTree = "<group>";
@@ -292,7 +295,8 @@
 			files = (
 				04FBEC672978FA9E009CFA5E /* ArgumentedReality.swift in Sources */,
 				04B814042977A6F600BCCFB5 /* ContentView.swift in Sources */,
-				04FBEC622978B7FC009CFA5E /* TakePhoto.swift in Sources */,
+				04FBEC622978B7FC009CFA5E /* TakePhotoView.swift in Sources */,
+				04266F612979BBA1004292A7 /* CropPhotoView.swift in Sources */,
 				04B814022977A6F600BCCFB5 /* AppDelegate.swift in Sources */,
 				04FBEC652978BF4E009CFA5E /* Navigation.swift in Sources */,
 			);

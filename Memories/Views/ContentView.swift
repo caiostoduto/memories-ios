@@ -21,7 +21,8 @@ struct ContentView : View {
     
     var body: some View {
         ZStack {
-            AR.container.edgesIgnoringSafeArea(.all)
+            AR.container
+                .edgesIgnoringSafeArea(.all)
             
             switch(state) {
             case 0:
@@ -50,7 +51,7 @@ struct ContentView : View {
                                        height: recording ? 30 : 65)
                                 .foregroundColor(.red)
                                 .cornerRadius(recording ? 5 : 50)
-                            
+                                .animation(.easeInOut(duration: 0.2), value: recording)
                         }.frame(width: 75, height: 75)
                         .contentShape(Rectangle())
                     }
@@ -75,7 +76,7 @@ struct ContentView : View {
             case 1:
                 TakePhoto(manager: self)
             case 2:
-                Text("View 2")
+                CropPhotoView(manager: self)
             default:
                 fatalError("Invalid state content")
             }

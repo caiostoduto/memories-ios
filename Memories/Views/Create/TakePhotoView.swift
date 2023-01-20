@@ -41,7 +41,7 @@ struct TakePhoto: View {
                 // Navigation
                 HStack {
                     Button(action: {
-                        self.manager.state = 0
+                        self.manager.state -= 1
                     }, label: {
                         Image(systemName: "chevron.backward")
                             .font(.system(size: 28))
