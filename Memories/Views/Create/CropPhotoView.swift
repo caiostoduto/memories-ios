@@ -38,7 +38,8 @@ struct CropPhotoView: View {
                     ForEach(0..<4) { i in // 0...3
                         Circle()
                             .fill()
-                            .frame(width: 20, height: 20)
+                            .frame(width: CGFloat(20 * circlesPresets[i].scale), height: CGFloat(20 * circlesPresets[i].scale))
+                            .animation(.linear(duration: 0.1), value: circlesPresets[i].scale)
                             .position(circlesPresets[i].center)
                     }
                     
@@ -58,7 +59,8 @@ struct CropPhotoView: View {
                 ForEach(0..<4) { i in // 0...3
                     Circle()
                         .stroke(.white, lineWidth: 1)
-                        .frame(width: 20, height: 20)
+                        .frame(width: CGFloat(20 * circlesPresets[i].scale), height: CGFloat(20 * circlesPresets[i].scale))
+                        .animation(.linear(duration: 0.1), value: circlesPresets[i].scale)
                         .position(circlesPresets[i].center)
                 }
                 
@@ -99,6 +101,8 @@ struct CropPhotoView: View {
         }.gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local).onChanged({ val in
             if (selectedCircle == nil) {
                 selectedCircle = closestCircle(point: val.startLocation)
+                
+                circlesPresets[selectedCircle].scale = 3
                 print("Selected Circle: "+String(selectedCircle))
             } else {
                 var x = circlesPresets[selectedCircle!].origin.x + val.translation.width
@@ -118,6 +122,7 @@ struct CropPhotoView: View {
                 print("Circle " + String(selectedCircle) + " new center", circlesPresets[selectedCircle!].center)
                 
                 circlesPresets[selectedCircle!].origin = circlesPresets[selectedCircle!].center
+                circlesPresets[selectedCircle!].scale = 1
                 selectedCircle = nil
             }
         }))
@@ -125,19 +130,19 @@ struct CropPhotoView: View {
     
     
     private func closestCircle(point: CGPoint) -> Int {
-            var closest: Int?
-            var closestDistance: CGFloat = .infinity
-            
-            for (index, circlePreset) in circlesPresets.enumerated() {
-                let distance = CGPointDistance(from: circlePreset.center, to: point)
-                if (distance < closestDistance) {
-                    closest = index
-                    closestDistance = distance
-                }
+        var closest: Int?
+        var closestDistance: CGFloat = .infinity
+        
+        for (index, circlePreset) in circlesPresets.enumerated() {
+            let distance = CGPointDistance(from: circlePreset.center, to: point)
+            if (distance < closestDistance) {
+                closest = index
+                closestDistance = distance
             }
-            
-            return closest!
         }
+        
+        return closest!
+    }
 }
 
 private func CGPointDistance(from: CGPoint, to: CGPoint) -> CGFloat {
@@ -148,6 +153,7 @@ private func CGPointDistance(from: CGPoint, to: CGPoint) -> CGFloat {
 private struct CirclePreset {
     var origin: CGPoint
     var center: CGPoint
+    var scale = 1
     
     init(origin: CGPoint) {
         self.origin = origin
