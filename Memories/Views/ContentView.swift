@@ -72,7 +72,8 @@ struct ContentView : View {
                         }
                     }
                 }
-            }
+            }.padding(.bottom, 10)
+                
             case 1:
                 TakePhoto(manager: self)
             case 2:

@@ -52,7 +52,7 @@ struct TakePhoto: View {
                     Spacer()
                 }
             }
-        }
+        }.padding(.bottom, 10)
     }
     
     func takePhoto() {
