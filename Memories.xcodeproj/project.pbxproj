@@ -17,6 +17,7 @@
 		04B814212977A6F700BCCFB5 /* MemoriesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B814202977A6F700BCCFB5 /* MemoriesUITestsLaunchTests.swift */; };
 		04FBA0CA297B9918006681BE /* ZImageCropper in Frameworks */ = {isa = PBXBuildFile; productRef = 04FBA0C9297B9918006681BE /* ZImageCropper */; };
 		04FBA0CE297B9D7B006681BE /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FBA0CD297B9D7B006681BE /* Memory.swift */; };
+		04FBA0D0297BA139006681BE /* ChooseVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FBA0CF297BA139006681BE /* ChooseVideo.swift */; };
 		04FBEC622978B7FC009CFA5E /* TakePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FBEC612978B7FC009CFA5E /* TakePhoto.swift */; };
 		04FBEC652978BF4E009CFA5E /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FBEC642978BF4E009CFA5E /* Navigation.swift */; };
 		04FBEC672978FA9E009CFA5E /* ArgumentedReality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FBEC662978FA9E009CFA5E /* ArgumentedReality.swift */; };
@@ -52,6 +53,7 @@
 		04B8141E2977A6F700BCCFB5 /* MemoriesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriesUITests.swift; sourceTree = "<group>"; };
 		04B814202977A6F700BCCFB5 /* MemoriesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		04FBA0CD297B9D7B006681BE /* Memory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
+		04FBA0CF297BA139006681BE /* ChooseVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseVideo.swift; sourceTree = "<group>"; };
 		04FBEC612978B7FC009CFA5E /* TakePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePhoto.swift; sourceTree = "<group>"; };
 		04FBEC642978BF4E009CFA5E /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		04FBEC662978FA9E009CFA5E /* ArgumentedReality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArgumentedReality.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			children = (
 				04FBEC612978B7FC009CFA5E /* TakePhoto.swift */,
 				04266F602979BBA1004292A7 /* CropPhoto.swift */,
+				04FBA0CF297BA139006681BE /* ChooseVideo.swift */,
 			);
 			path = Create;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				04B814042977A6F600BCCFB5 /* ContentView.swift in Sources */,
 				04FBEC622978B7FC009CFA5E /* TakePhoto.swift in Sources */,
 				04FBA0CE297B9D7B006681BE /* Memory.swift in Sources */,
+				04FBA0D0297BA139006681BE /* ChooseVideo.swift in Sources */,
 				04266F612979BBA1004292A7 /* CropPhoto.swift in Sources */,
 				04B814022977A6F600BCCFB5 /* AppDelegate.swift in Sources */,
 				04FBEC652978BF4E009CFA5E /* Navigation.swift in Sources */,
@@ -341,6 +345,7 @@
 		};
 		04B8141C2977A6F700BCCFB5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 04B813FD2977A6F600BCCFB5 /* Memories */;
 			targetProxy = 04B8141B2977A6F700BCCFB5 /* PBXContainerItemProxy */;
 		};
@@ -397,7 +402,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -451,7 +456,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -479,6 +484,7 @@
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -513,6 +519,7 @@
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -538,10 +545,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = U6FNDVRTVG;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.caiostoduto.MemoriesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -558,10 +568,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = U6FNDVRTVG;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.caiostoduto.MemoriesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -580,6 +593,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.caiostoduto.MemoriesUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -598,6 +614,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.caiostoduto.MemoriesUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
