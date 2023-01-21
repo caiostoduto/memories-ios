@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "zimagecropper",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ZaidPathan/ZImageCropper",
+      "state" : {
+        "branch" : "master",
+        "revision" : "093e263caa6436e0ee48cfe49a4f681d5c4ea670"
+      }
+    }
+  ],
+  "version" : 2
+}

@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import ZImageCropper
 
 struct CropPhotoView: View {
-    let manager: ContentView!
+    private var manager: ContentView!
     
     @State private var selectedCircle: Int! = nil
     @State private var circlesPresets = [
@@ -90,6 +91,19 @@ struct CropPhotoView: View {
                     Spacer()
                     
                     Button(action: {
+                        let imageView = UIImageView(image:UIImage(
+                            cgImage: self.manager.AR.lastSnapshot!))
+                        
+                        let croppedImage = ZImageCropper.cropImage(
+                            ofImageView: imageView, withinPoints: [
+                                circlesPresets[0].center, //Start point
+                                circlesPresets[1].center,
+                                circlesPresets[2].center,
+                                circlesPresets[3].center  //End point
+                        ])
+                        
+                        self.manager.AR.croppedImage = croppedImage
+                        
                         self.manager.state += 1
                     }, label: {
                         Image(systemName: "checkmark")
@@ -163,10 +177,10 @@ private struct CirclePreset {
     }
 }
 
-#if DEBUG
+/* #if DEBUG
 struct CropPhotoView_Previews: PreviewProvider {
     static var previews: some View {
         CropPhotoView(manager: ContentView())
     }
 }
-#endif
+#endif */

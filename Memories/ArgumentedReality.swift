@@ -14,6 +14,7 @@ class ArgumentedReality {
     private var config = ARImageTrackingConfiguration()
     let container: ARViewContainer
     var lastSnapshot: CGImage?
+    public var croppedImage: UIImage?
     
     init() {
         arView.session.run(config)

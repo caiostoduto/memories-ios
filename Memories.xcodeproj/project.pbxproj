@@ -15,6 +15,7 @@
 		04B814152977A6F700BCCFB5 /* MemoriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B814142977A6F700BCCFB5 /* MemoriesTests.swift */; };
 		04B8141F2977A6F700BCCFB5 /* MemoriesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8141E2977A6F700BCCFB5 /* MemoriesUITests.swift */; };
 		04B814212977A6F700BCCFB5 /* MemoriesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B814202977A6F700BCCFB5 /* MemoriesUITestsLaunchTests.swift */; };
+		04FBA0CA297B9918006681BE /* ZImageCropper in Frameworks */ = {isa = PBXBuildFile; productRef = 04FBA0C9297B9918006681BE /* ZImageCropper */; };
 		04FBEC622978B7FC009CFA5E /* TakePhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FBEC612978B7FC009CFA5E /* TakePhotoView.swift */; };
 		04FBEC652978BF4E009CFA5E /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FBEC642978BF4E009CFA5E /* Navigation.swift */; };
 		04FBEC672978FA9E009CFA5E /* ArgumentedReality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FBEC662978FA9E009CFA5E /* ArgumentedReality.swift */; };
@@ -59,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04FBA0CA297B9918006681BE /* ZImageCropper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +181,9 @@
 			dependencies = (
 			);
 			name = Memories;
+			packageProductDependencies = (
+				04FBA0C9297B9918006681BE /* ZImageCropper */,
+			);
 			productName = "Polaroid AR";
 			productReference = 04B813FE2977A6F600BCCFB5 /* Memories.app */;
 			productType = "com.apple.product-type.application";
@@ -251,6 +256,9 @@
 				Base,
 			);
 			mainGroup = 04B813F52977A6F600BCCFB5;
+			packageReferences = (
+				04FBA0C8297B9918006681BE /* XCRemoteSwiftPackageReference "ZImageCropper" */,
+			);
 			productRefGroup = 04B813FF2977A6F600BCCFB5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -627,6 +635,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		04FBA0C8297B9918006681BE /* XCRemoteSwiftPackageReference "ZImageCropper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ZaidPathan/ZImageCropper";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		04FBA0C9297B9918006681BE /* ZImageCropper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04FBA0C8297B9918006681BE /* XCRemoteSwiftPackageReference "ZImageCropper" */;
+			productName = ZImageCropper;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 04B813F62977A6F600BCCFB5 /* Project object */;
 }
