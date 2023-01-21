@@ -79,6 +79,8 @@ struct ContentView : View {
                 TakePhoto(manager: self)
             case 2:
                 CropPhotoView(manager: self)
+            case 3:
+                
             default:
                 fatalError("Invalid state content")
             }
