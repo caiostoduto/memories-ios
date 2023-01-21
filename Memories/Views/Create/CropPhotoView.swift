@@ -25,7 +25,7 @@ struct CropPhotoView: View {
     
     var body: some View {
         ZStack {
-            Image(uiImage: UIImage(cgImage: self.manager.AR.lastSnapshot!))
+            Image(uiImage: UIImage(cgImage: self.manager.Memory.currentSnapshot!))
                 .edgesIgnoringSafeArea(.all)
                 
                 
@@ -92,7 +92,7 @@ struct CropPhotoView: View {
                     
                     Button(action: {
                         let imageView = UIImageView(image:UIImage(
-                            cgImage: self.manager.AR.lastSnapshot!))
+                            cgImage: self.manager.Memory.currentSnapshot!))
                         
                         let croppedImage = ZImageCropper.cropImage(
                             ofImageView: imageView, withinPoints: [
@@ -102,7 +102,7 @@ struct CropPhotoView: View {
                                 circlesPresets[3].center  //End point
                         ])
                         
-                        self.manager.AR.croppedImage = croppedImage
+                        self.manager.Memory.currentCroppedImage = croppedImage
                         
                         self.manager.state += 1
                     }, label: {

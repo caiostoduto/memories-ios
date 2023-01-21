@@ -9,13 +9,14 @@ import SwiftUI
 import RealityKit
 
 struct ContentView : View {
-    @Namespace private var namespace
     @State private var recording = false
-    @State var state = 0
+    @State public var state = 0
     
     public var AR = ArgumentedReality()
+    public var Memory: MemoryManager
     
     init() {
+        Memory = MemoryManager(AR: AR)
         UINavigationBar.setAnimationsEnabled(false)
     }
     

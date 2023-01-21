@@ -56,9 +56,29 @@ struct TakePhoto: View {
     }
     
     func takePhoto() {
-        self.manager.AR.snapshot {
+        self.manager.AR.snapshot { image in
+            self.manager.Memory.currentSnapshot = image!.cgImage!.resizeAndCrop(size: UIScreen.main.bounds.size)
             self.manager.state += 1
         }
+    }
+}
+
+private extension CGImage {
+    func resizeAndCrop(size:CGSize) -> CGImage? {
+        let widthRatio = size.width / size.width
+        let heightRatio = size.height / size.height
+        let scaleFactor = min(widthRatio, heightRatio)
+        
+        let bytesPerPixel = self.bitsPerPixel / self.bitsPerComponent
+        let destBytesPerRow = width * bytesPerPixel
+        
+        guard let colorSpace = self.colorSpace else { return nil }
+        guard let context = CGContext(data: nil, width: Int(size.width * scaleFactor), height: Int(size.height * scaleFactor), bitsPerComponent: self.bitsPerComponent, bytesPerRow: destBytesPerRow, space: colorSpace, bitmapInfo: self.alphaInfo.rawValue) else { return nil }
+        
+        context.interpolationQuality = .high
+        context.draw(self, in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+        
+        return context.makeImage()
     }
 }
 
