@@ -24,9 +24,10 @@ struct CropPhotoView: View {
     
     var body: some View {
         ZStack {
-            Image(uiImage: self.manager.AR.lastSnapshot!)
-                .scaledToFit()
+            Image(uiImage: UIImage(cgImage: self.manager.AR.lastSnapshot!))
                 .edgesIgnoringSafeArea(.all)
+                
+                
             
             ZStack {
                 Rectangle() // destination
@@ -97,7 +98,7 @@ struct CropPhotoView: View {
                     }).frame(width: 75, height: 75)
                         .contentShape(Rectangle())
                 }
-            }.padding(.bottom, 10)
+            }.padding(.bottom, 20 + (UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 0))
 
         }.gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local).onChanged({ val in
             if (selectedCircle == nil) {
@@ -126,7 +127,7 @@ struct CropPhotoView: View {
                 circlesPresets[selectedCircle!].side = 20
                 selectedCircle = nil
             }
-        }))
+        })).edgesIgnoringSafeArea(.all)
     }
     
     

@@ -13,7 +13,7 @@ class ArgumentedReality {
     private let arView = ARView(frame: .zero)
     private var config = ARImageTrackingConfiguration()
     let container: ARViewContainer
-    var lastSnapshot: UIImage?
+    var lastSnapshot: CGImage?
     
     init() {
         arView.session.run(config)
@@ -22,7 +22,7 @@ class ArgumentedReality {
     
     func snapshot(completion: @escaping ()->()) {
         arView.snapshot(saveToHDR: false) { image in
-            self.lastSnapshot = image?.scalePreservingAspectRatio(targetSize: UIScreen.main.bounds.size)
+            self.lastSnapshot = image!.cgImage!.resizeAndCrop(size: UIScreen.main.bounds.size)
             
             completion()
         }
@@ -42,6 +42,40 @@ struct ARViewContainer: UIViewRepresentable {
     
     func updateUIView(_ uiView: ARView, context: Context) {}
     
+}
+
+private extension CGImage {
+    func resizeAndCrop(size:CGSize) -> CGImage? {
+        let widthRatio = size.width / size.width
+        let heightRatio = size.height / size.height
+        let scaleFactor = min(widthRatio, heightRatio)
+        
+        let bytesPerPixel = self.bitsPerPixel / self.bitsPerComponent
+        let destBytesPerRow = width * bytesPerPixel
+        
+        guard let colorSpace = self.colorSpace else { return nil }
+        guard let context = CGContext(data: nil, width: Int(size.width * scaleFactor), height: Int(size.height * scaleFactor), bitsPerComponent: self.bitsPerComponent, bytesPerRow: destBytesPerRow, space: colorSpace, bitmapInfo: self.alphaInfo.rawValue) else { return nil }
+        
+        context.interpolationQuality = .high
+        context.draw(self, in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+        
+        return context.makeImage()
+        
+        /* let width: Int = Int(size.width)
+        let height: Int = Int(size.height)
+
+        let bytesPerPixel = self.bitsPerPixel / self.bitsPerComponent
+        let destBytesPerRow = width * bytesPerPixel
+
+
+        guard let colorSpace = self.colorSpace else { return nil }
+        guard let context = CGContext(data: nil, width: width, height: height, bitsPerComponent: self.bitsPerComponent, bytesPerRow: destBytesPerRow, space: colorSpace, bitmapInfo: self.alphaInfo.rawValue) else { return nil }
+
+        context.interpolationQuality = .high
+        context.draw(self, in: CGRect(x: 0, y: 0, width: width, height: height))
+
+        return context.makeImage() */
+    }
 }
 
 private extension UIImage {
