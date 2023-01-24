@@ -15,4 +15,8 @@ class MemoryManager {
     init(AR: ArgumentedReality) {
         self.AR = AR
     }
+    
+    func create(video: URL) {
+        
+    }
 }

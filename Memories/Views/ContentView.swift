@@ -80,7 +80,7 @@ struct ContentView : View {
             case 2:
                 CropPhotoView(manager: self)
             case 3:
-                
+                ChooseVideo(manager: self)
             default:
                 fatalError("Invalid state content")
             }
