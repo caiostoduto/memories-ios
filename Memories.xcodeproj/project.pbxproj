@@ -19,7 +19,6 @@
 		04FBA0CE297B9D7B006681BE /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FBA0CD297B9D7B006681BE /* Memory.swift */; };
 		04FBA0D0297BA139006681BE /* ChooseVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FBA0CF297BA139006681BE /* ChooseVideo.swift */; };
 		04FBEC622978B7FC009CFA5E /* TakePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FBEC612978B7FC009CFA5E /* TakePhoto.swift */; };
-		04FBEC652978BF4E009CFA5E /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FBEC642978BF4E009CFA5E /* Navigation.swift */; };
 		04FBEC672978FA9E009CFA5E /* ArgumentedReality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FBEC662978FA9E009CFA5E /* ArgumentedReality.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,7 +54,6 @@
 		04FBA0CD297B9D7B006681BE /* Memory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
 		04FBA0CF297BA139006681BE /* ChooseVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseVideo.swift; sourceTree = "<group>"; };
 		04FBEC612978B7FC009CFA5E /* TakePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePhoto.swift; sourceTree = "<group>"; };
-		04FBEC642978BF4E009CFA5E /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		04FBEC662978FA9E009CFA5E /* ArgumentedReality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArgumentedReality.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,7 +110,6 @@
 				04FBEC662978FA9E009CFA5E /* ArgumentedReality.swift */,
 				04FBA0CD297B9D7B006681BE /* Memory.swift */,
 				04FBEC5D2978AD5F009CFA5E /* Views */,
-				04FBEC632978BF2E009CFA5E /* Components */,
 				04B814072977A6F700BCCFB5 /* Assets.xcassets */,
 				04B814092977A6F700BCCFB5 /* Preview Content */,
 			);
@@ -161,14 +158,6 @@
 				04FBA0CF297BA139006681BE /* ChooseVideo.swift */,
 			);
 			path = Create;
-			sourceTree = "<group>";
-		};
-		04FBEC632978BF2E009CFA5E /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				04FBEC642978BF4E009CFA5E /* Navigation.swift */,
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,7 +303,6 @@
 				04FBA0D0297BA139006681BE /* ChooseVideo.swift in Sources */,
 				04266F612979BBA1004292A7 /* CropPhoto.swift in Sources */,
 				04B814022977A6F600BCCFB5 /* AppDelegate.swift in Sources */,
-				04FBEC652978BF4E009CFA5E /* Navigation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
