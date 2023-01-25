@@ -17,6 +17,7 @@ class MemoryManager {
     }
     
     func create(video: URL) {
-        
+        print(video
+        )
     }
 }

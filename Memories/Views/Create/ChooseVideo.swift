@@ -93,7 +93,11 @@ private struct VideoPicker: UIViewControllerRepresentable {
         }
         
         func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
-            parent.selectedVideo = results[0] // Always has only 1 element
+            if (results.isEmpty) {
+                parent.selectedVideo = nil
+            } else {
+                parent.selectedVideo = results[0] // Always has only 1 element
+            }
             parent.sheetIsPresenting = false // Set sheetIsPresenting to false because picking has finished.
         }
     }
@@ -108,7 +112,7 @@ func saveAssetResource(
         print("Could not request data for resource: \(resource), error: \(String(describing: maybeError))")
         return nil
     }
-
+    
     let maybeExt = UTTypeCopyPreferredTagWithClass(
         resource.uniformTypeIdentifier as CFString,
         kUTTagClassFilenameExtension
