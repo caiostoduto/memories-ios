@@ -26,6 +26,8 @@ struct ChooseVideo: View {
                     if selectedVideo != nil {
                         let provider = selectedVideo!.itemProvider
                         
+                        print(provider.registeredContentTypes)
+                        
                         switch (provider.registeredTypeIdentifiers.first) {
                         case "com.apple.live-photo-bundle":
                             provider.loadObject(ofClass: PHLivePhoto.self) { _livePhoto, err in
@@ -40,7 +42,7 @@ struct ChooseVideo: View {
                                 self.manager.Memory.create(video: url!)
                             }
                             break
-                        case "com.apple.quicktime-movie":
+                        case "com.apple.quicktime-movie", "public.mpeg-4":
                             provider.loadFileRepresentation(forTypeIdentifier: UTType.movie.identifier) { url, err in
                                 if (err != nil) { fatalError(err!.localizedDescription) }
                                 
