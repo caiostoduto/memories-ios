@@ -19,8 +19,11 @@ struct ChooseVideo: View {
     }
     
     var body: some View {
-        Image(uiImage: UIImage(cgImage: self.manager.Memory.currentSnapshot!))
-            .edgesIgnoringSafeArea(.all)
+        ZStack {
+            Image(uiImage: UIImage(cgImage: self.manager.Memory.currentSnapshot!))
+            Rectangle() // destination
+                .fill(.black.opacity(0.6))
+        }.edgesIgnoringSafeArea(.all)
             .sheet(isPresented: $sheetIsPresenting) {
                 VideoPicker(self).onDisappear {
                     if selectedVideo != nil {
