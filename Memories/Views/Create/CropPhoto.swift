@@ -25,11 +25,6 @@ struct CropPhotoView: View {
     
     var body: some View {
         ZStack {
-            Image(uiImage: UIImage(cgImage: self.manager.Memory.currentSnapshot!))
-                .edgesIgnoringSafeArea(.all)
-                
-                
-            
             ZStack {
                 Rectangle() // destination
                     .fill(.black.opacity(0.6))
@@ -52,7 +47,8 @@ struct CropPhotoView: View {
                         path.closeSubpath()
                     }.fill()
                     
-                }.blendMode(.destinationOut)
+                }.edgesIgnoringSafeArea(.all)
+                    .blendMode(.destinationOut)
                 
             }.compositingGroup()
 
@@ -72,7 +68,7 @@ struct CropPhotoView: View {
                     path.addLines([circlesPresets[1].center, circlesPresets[2].center, circlesPresets[3].center, circlesPresets[0].center])
                     path.closeSubpath()
                 }.stroke(.white, lineWidth: 1)
-            }
+            }.edgesIgnoringSafeArea(.all)
             
             // Navigation
             VStack {
@@ -114,9 +110,12 @@ struct CropPhotoView: View {
                 }
                 
                 
-            }.padding(.bottom, 17 + (UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 0))
+            }.padding(.bottom, 10)
 
-        }.gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local).onChanged({ val in
+        }.background(
+            Image(uiImage: UIImage(cgImage: self.manager.Memory.currentSnapshot!))
+                .edgesIgnoringSafeArea(.all)
+        ).gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local).onChanged({ val in
             if (selectedCircle == nil) {
                 selectedCircle = closestCircle(point: val.startLocation)
                 
@@ -143,7 +142,7 @@ struct CropPhotoView: View {
                 circlesPresets[selectedCircle!].side = 20
                 selectedCircle = nil
             }
-        })).edgesIgnoringSafeArea(.all)
+        }))
     }
     
     
