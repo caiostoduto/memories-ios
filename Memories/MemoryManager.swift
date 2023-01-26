@@ -23,6 +23,8 @@ class MemoryManager {
     public var currentCroppedImage: UIImage?
     
     init(AR: ArgumentedReality) {
+        self.AR = AR
+        
         if (!filem.fileExists(atPath: appFolder.path())) {
             try! filem.createDirectory(
                 at: appFolder,
