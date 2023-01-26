@@ -6,24 +6,25 @@
 //
 
 import SwiftUI
+import ARKit
+
+private let filem = FileManager.default
+private let docsURL = filem.urls(
+    for: .documentDirectory,
+    in: .userDomainMask
+).first
+private let appFolder = docsURL!.appendingPathComponent("Memories")
 
 class MemoryManager {
     private var AR: ArgumentedReality
-    private let filem = FileManager.default
-    private let appFolder: URL
     
     // Temporary variables
     public var currentSnapshot: CGImage?
     public var currentCroppedImage: UIImage?
     
     init(AR: ArgumentedReality) {
-        self.AR = AR
-        
-        var docsURL = self.filem.urls(for: .documentDirectory, in: .userDomainMask).first
-        appFolder = docsURL!.appendingPathComponent("Memories")
-
-        if (!self.filem.fileExists(atPath: appFolder.path())) {
-            try! self.filem.createDirectory(
+        if (!filem.fileExists(atPath: appFolder.path())) {
+            try! filem.createDirectory(
                 at: appFolder,
                 withIntermediateDirectories: true,
                 attributes: [:]
@@ -32,8 +33,9 @@ class MemoryManager {
     }
     
     func create(video: URL) {
-        let memDir = appFolder.appendingPathComponent(randomString(length: 5))
-        try! self.filem.createDirectory(at: memDir, withIntermediateDirectories: true)
+        let memId = randomString(length: 5)
+        let memDir = appFolder.appendingPathComponent(memId) // 62ˆ5 = 9.1 * 10ˆ8
+        try! filem.createDirectory(at: memDir, withIntermediateDirectories: true)
         print("Create Memory ~ " + memDir.absoluteString)
         
         let infoObj: NSMutableDictionary = NSMutableDictionary()
@@ -42,7 +44,7 @@ class MemoryManager {
         let jsonData = try! JSONSerialization.data(withJSONObject: infoObj, options: JSONSerialization.WritingOptions()) as NSData
         
         let videoPath = memDir.appendingPathComponent("video." + video.pathExtension)
-        try! self.filem.moveItem(at: video, to: videoPath)
+        try! filem.moveItem(at: video, to: videoPath)
         
         let photoPath = memDir.appendingPathComponent("anchor.png")
         try! self.currentCroppedImage!.pngData()!.write(to: photoPath)
@@ -50,10 +52,38 @@ class MemoryManager {
         let infoPath = memDir.appendingPathComponent("info.json")
         try! jsonData.write(to: infoPath)
         
+        let mem = Memory(
+            id: memId, videoURL: videoPath,
+            image: self.currentCroppedImage!,
+            width_in_cm: jsonData.value(forKey: "width_in_cm") as! CGFloat
+        )
+        
+        AR.add(memory: mem)
+        
         // Clean temporary variables
         self.currentSnapshot = nil
         self.currentCroppedImage = nil
-        // AR.add()
+    }
+}
+
+class Memory {
+    let id: String
+    let videoURL: URL
+    let arImg: ARReferenceImage
+    
+    init(id: String, videoURL: URL, image: UIImage, width_in_cm: CGFloat) {
+        self.id = id
+        self.videoURL = videoURL
+        self.arImg = ARReferenceImage(
+            image.ciImage!.pixelBuffer!,
+            orientation: .up,
+            physicalWidth: width_in_cm
+        )
+    }
+    
+    func delete() {
+        let memPath = appFolder.appendingPathComponent(id)
+        try! filem.removeItem(at: memPath)
     }
 }
 

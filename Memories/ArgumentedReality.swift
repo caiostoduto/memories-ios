@@ -13,6 +13,7 @@ class ArgumentedReality {
     private let arView = ARView(frame: .zero)
     private var config = ARImageTrackingConfiguration()
     let container: ARViewContainer
+    var memories: [Memory] = []
     
     init() {
         arView.session.run(config)
@@ -23,6 +24,11 @@ class ArgumentedReality {
         arView.snapshot(saveToHDR: false) { image in
             completion(image)
         }
+    }
+    
+    func add(memory: Memory) {
+        config.trackingImages.update(with: memory.arImg)
+        memories.append(memory)
     }
 }
 
